@@ -4,24 +4,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+ // Maria Luiza, Lazaro, Vinicius
 public class AchadosPerdidos {
 
 
 
     private final String url = "jdbc:postgresql://localhost/AchadosPerdidos";
     private final String user = "postgres";
-    private final String password = "b0aofmd0";
+    private final String password = "123456";
     Connection conn = null;
 
 
     private static final String QUERY = "select * from autor where id_autor =?";
-    private static final String SELECT_ALL_QUERY = "select * from autor";
-    private static final String INSERT_USERS_SQL = "INSERT INTO users"+
-             "  (local, data_hora, nome, título, observação) VALUES " +
-         " (?, ?, ?, ?, ?);";
+    private static final String SELECT_ALL_QUERY = "select * from AchadosPerdidos";
+    private static final String INSERT_USERS_SQL = "INSERT INTO AchadosPerdidos"+
+            "  (local_obj, data_obj, nome, status, tipo, observacao) VALUES " +
+             " ( ?, ?, ?, ?, ?, ?);";
 
-    
+    private static final String UPDATE_USERS_SQL = "update users set name = ? where id = ?;";
+
 
     public Connection connect() {
 
@@ -54,11 +55,12 @@ public class AchadosPerdidos {
 
              // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-            preparedStatement.setInt(1, 1);
-            preparedStatement.setString(2, "Tony");
-            preparedStatement.setString(3, "tony@gmail.com");
-            preparedStatement.setString(4, "US");
-            preparedStatement.setString(5, "secret");
+            preparedStatement.setString(1, local_obj);
+            preparedStatement.setString(2, data_obj);
+            preparedStatement.setString(3, nome);
+            preparedStatement.setString(4, status);
+            preparedStatement.setString(5, tipo);
+            preparedStatement.setString(6, observacao);
 
             System.out.println(preparedStatement);
             // Step 3: Execute the query or update query
