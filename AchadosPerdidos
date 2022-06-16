@@ -1,0 +1,26 @@
+CREATE TABLE AchadosPerdidos
+(
+	id_obj 	SERIAL,
+	local_obj VARCHAR(20),
+	data_obj   VARCHAR(12),
+	nome 		VARCHAR(40),
+	status		VARCHAR(20),
+	tipo		VARCHAR(20),
+	observacao	VARCHAR(40),
+	PRIMARY KEY (id_obj)
+);
+INSERT INTO AchadosPerdidos (local_obj, data_obj, nome, status, tipo, observacao)
+	VALUES ('shopping', '07/10/2018', 'bolsa', 'encontrado','couro', 'próximo à loja Rihappy' );
+
+INSERT INTO AchadosPerdidos (local_obj, data_obj, nome, status, tipo, observacao)
+	VALUES ('parque', '28/07/2020', 'celular', 'perdido','iphone', 'caído embaixo do banco');
+
+INSERT INTO AchadosPerdidos (local_obj, data_obj, nome, status, tipo, observacao)
+	VALUES ('supermercado', '07/03/2021', 'cartao', 'encontrado','banco inter', 'próximo à lixeira');
+	
+INSERT INTO AchadosPerdidos (local_obj, data_obj, nome, status, tipo, observacao)
+	VALUES ('biblioteca', '26/10/2017', 'documento', 'encontrado','identidade', 'esquecida no balcão');
+	
+	select nome from AchadosPerdidos	
+	
+	
