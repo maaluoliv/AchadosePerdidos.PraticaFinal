@@ -173,6 +173,16 @@ public class AchadosPerdidos {
                 }
             }
         }
+    
+      public void deleteRecord() throws SQLException {
+	        	System.out.println(" Insira o ID : ");
+	        	
+	        	   PreparedStatement preparedStatement = conn.prepareStatement(DELETE_USERS_SQL);
+	        	   preparedStatement.setInt(1, id);
+	        	   int r = Integer.parseInt(JOptionPane.showInputDialog(null, "CERTEZA que quer EXLUIR? [1]SIM [2]NÃO"));
+	        
+	        
+	        }
         public Connection closeConn () throws SQLException {
             try {
                 conn.close();
